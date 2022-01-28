@@ -2,6 +2,13 @@ Nice little console project for showing scales on a guitar
 
 For example:
 
+i use linux
+to compile the example in vala
+
+```
+valac --pkg posix --pkg gee-0.8 scales.vala FileReader.vala -X -w
+```
+
 ./scales A Dorian
 
 then it shows
@@ -20,3 +27,7 @@ Notes : A,B,C,D,E,F#,G
 ```
 
 because i'm a left-handed player it shows the highest position first :-)
+
+the scale.ex file is my Elixir-Version
+
+
