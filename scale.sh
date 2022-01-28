@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. "./lib/libScale.sh"
+. "./libScale.sh"
 
 muster="$2" # Bsp.: Aeolian
 
