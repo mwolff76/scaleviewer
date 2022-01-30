@@ -30,6 +30,7 @@ because i'm a left-handed player it shows the highest position first :-)
 
 ```
 The folders contain the respective versions of the other programming languages
+scale.nim for Nim
 scale.ex for Elixir
 scale.jl for Julia
 scale.sh for bash(Linux)
