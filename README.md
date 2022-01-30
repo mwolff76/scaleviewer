@@ -29,9 +29,10 @@ Notes : A,B,C,D,E,F#,G
 because i'm a left-handed player it shows the highest position first :-)
 
 ```
-scale.ex is my Elixir-Version
-scale.sh and libScale.sh is a Bash-Version
-scale.jl is my Julia-Version
+The folders contain the respective versions of the other programming languages
+scale.ex for Elixir
+scale.jl for Julia
+scale.sh for bash(Linux)
 ```
 
 
