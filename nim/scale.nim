@@ -69,4 +69,13 @@ proc main(tonart : string, mode : string) =
     echo saiten[0]
 
 
-main("A", "Aeolian")
+if paramCount() < 2:
+    main("A", "Aeolian")
+else:
+    try:
+        if notes.contains(paramStr(1)):
+            main(paramStr(1),paramStr(2))
+        else:
+            echo "wrong key parameter use only -> (" & join(notes,",") & ")"
+    except KeyError:
+        echo "wrong scale mode!"
