@@ -82,25 +82,25 @@ int main(string[] args){
 
     stdout.printf("Notes : %s\n", string.joinv(",", playedNotes));
 
-    string buende="|024-023-022-021-020-019-018-017-016-015-014-013-012-011-010-009-008-007-006-005-004-003-002-001-000|";
-    string strich="|---------------------------------------------------------------------------------------------------|";
-    string saiten[] = { "|-A-|-L-|-K-|-J-|-I-|-H-|-G-|-F-|-E-|-D-|-C-|-B-|-A-|-L-|-K-|-J-|-I-|-H-|-G-|-F-|-E-|-D-|-C-|-B-|-A-|", // E
-                        "|-H-|-G-|-F-|-E-|-D-|-C-|-B-|-A-|-L-|-K-|-J-|-I-|-H-|-G-|-F-|-E-|-D-|-C-|-B-|-A-|-L-|-K-|-J-|-I-|-H-|", // H
-                        "|-D-|-C-|-B-|-A-|-L-|-K-|-J-|-I-|-H-|-G-|-F-|-E-|-D-|-C-|-B-|-A-|-L-|-K-|-J-|-I-|-H-|-G-|-F-|-E-|-D-|", // G
-                        "|-K-|-J-|-I-|-H-|-G-|-F-|-E-|-D-|-C-|-B-|-A-|-L-|-K-|-J-|-I-|-H-|-G-|-F-|-E-|-D-|-C-|-B-|-A-|-L-|-K-|", // D
-                        "|-F-|-E-|-D-|-C-|-B-|-A-|-L-|-K-|-J-|-I-|-H-|-G-|-F-|-E-|-D-|-C-|-B-|-A-|-L-|-K-|-J-|-I-|-H-|-G-|-F-|" }; // A
+    string frets ="|024-023-022-021-020-019-018-017-016-015-014-013-012-011-010-009-008-007-006-005-004-003-002-001-000|";
+    string line  ="|---------------------------------------------------------------------------------------------------|";
+    string guitstr[] = { "|-A-|-L-|-K-|-J-|-I-|-H-|-G-|-F-|-E-|-D-|-C-|-B-|-A-|-L-|-K-|-J-|-I-|-H-|-G-|-F-|-E-|-D-|-C-|-B-|-A-|", // E
+                         "|-H-|-G-|-F-|-E-|-D-|-C-|-B-|-A-|-L-|-K-|-J-|-I-|-H-|-G-|-F-|-E-|-D-|-C-|-B-|-A-|-L-|-K-|-J-|-I-|-H-|", // H
+                         "|-D-|-C-|-B-|-A-|-L-|-K-|-J-|-I-|-H-|-G-|-F-|-E-|-D-|-C-|-B-|-A-|-L-|-K-|-J-|-I-|-H-|-G-|-F-|-E-|-D-|", // G
+                         "|-K-|-J-|-I-|-H-|-G-|-F-|-E-|-D-|-C-|-B-|-A-|-L-|-K-|-J-|-I-|-H-|-G-|-F-|-E-|-D-|-C-|-B-|-A-|-L-|-K-|", // D
+                         "|-F-|-E-|-D-|-C-|-B-|-A-|-L-|-K-|-J-|-I-|-H-|-G-|-F-|-E-|-D-|-C-|-B-|-A-|-L-|-K-|-J-|-I-|-H-|-G-|-F-|" }; // A
 
-    replaceValue(saiten, playedNotes, getN, "O");
-    replaceValue(saiten, notes, getN, "-");
+    replaceValue(guitstr, playedNotes, getN, "O");
+    replaceValue(guitstr, notes, getN, "-");
 
-    stdout.printf("%s\n", buende);
-    stdout.printf("%s\n", strich);
+    stdout.printf("%s\n", frets);
+    stdout.printf("%s\n", line);
 
-    foreach(string saite in saiten){
-        stdout.printf("%s\n", saite);
+    foreach(string gstr in guitstr){
+        stdout.printf("%s\n", gstr);
     }
 
-    stdout.printf("%s\n", saiten[0]);
+    stdout.printf("%s\n", guitstr[0]);
 
     return 0;
 }
