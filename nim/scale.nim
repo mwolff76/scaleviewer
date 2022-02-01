@@ -38,35 +38,35 @@ proc myReplace(saiten : var seq[string], notes : seq[string], repVal : string) =
        
 
 
-proc main(tonart : string, mode : string) =
+proc main(key : string, mode : string) =
 
     let
         scale=get_scales("scales.txt")
-        p = get_pos(tonart)
+        p = get_pos(key)
         mynotes=get_played_notes(p, scale[mode])
        
-        buende = "|024-023-022-021-020-019-018-017-016-015-014-013-012-011-010-009-008-007-006-005-004-003-002-001-000|"
-        strich = "|---------------------------------------------------------------------------------------------------|"
+        frets  = "|024-023-022-021-020-019-018-017-016-015-014-013-012-011-010-009-008-007-006-005-004-003-002-001-000|"
+        line   = "|---------------------------------------------------------------------------------------------------|"
         
     var
-        saiten = @["|-A-|-L-|-K-|-J-|-I-|-H-|-G-|-F-|-E-|-D-|-C-|-B-|-A-|-L-|-K-|-J-|-I-|-H-|-G-|-F-|-E-|-D-|-C-|-B-|-A-|-e",
-                   "|-H-|-G-|-F-|-E-|-D-|-C-|-B-|-A-|-L-|-K-|-J-|-I-|-H-|-G-|-F-|-E-|-D-|-C-|-B-|-A-|-L-|-K-|-J-|-I-|-H-|-h",
-                   "|-D-|-C-|-B-|-A-|-L-|-K-|-J-|-I-|-H-|-G-|-F-|-E-|-D-|-C-|-B-|-A-|-L-|-K-|-J-|-I-|-H-|-G-|-F-|-E-|-D-|-g",
-                   "|-K-|-J-|-I-|-H-|-G-|-F-|-E-|-D-|-C-|-B-|-A-|-L-|-K-|-J-|-I-|-H-|-G-|-F-|-E-|-D-|-C-|-B-|-A-|-L-|-K-|-d",
-                   "|-F-|-E-|-D-|-C-|-B-|-A-|-L-|-K-|-J-|-I-|-H-|-G-|-F-|-E-|-D-|-C-|-B-|-A-|-L-|-K-|-J-|-I-|-H-|-G-|-F-|-a"]
+        guitstr = @["|-A-|-L-|-K-|-J-|-I-|-H-|-G-|-F-|-E-|-D-|-C-|-B-|-A-|-L-|-K-|-J-|-I-|-H-|-G-|-F-|-E-|-D-|-C-|-B-|-A-|-e",
+                    "|-H-|-G-|-F-|-E-|-D-|-C-|-B-|-A-|-L-|-K-|-J-|-I-|-H-|-G-|-F-|-E-|-D-|-C-|-B-|-A-|-L-|-K-|-J-|-I-|-H-|-h",
+                    "|-D-|-C-|-B-|-A-|-L-|-K-|-J-|-I-|-H-|-G-|-F-|-E-|-D-|-C-|-B-|-A-|-L-|-K-|-J-|-I-|-H-|-G-|-F-|-E-|-D-|-g",
+                    "|-K-|-J-|-I-|-H-|-G-|-F-|-E-|-D-|-C-|-B-|-A-|-L-|-K-|-J-|-I-|-H-|-G-|-F-|-E-|-D-|-C-|-B-|-A-|-L-|-K-|-d",
+                    "|-F-|-E-|-D-|-C-|-B-|-A-|-L-|-K-|-J-|-I-|-H-|-G-|-F-|-E-|-D-|-C-|-B-|-A-|-L-|-K-|-J-|-I-|-H-|-G-|-F-|-a"]
     
-    myReplace(saiten, mynotes, "O");
-    myReplace(saiten, notes, "-");
+    myReplace(guitstr, mynotes, "O");
+    myReplace(guitstr, notes, "-");
 
-    echo "Noten : " & join(mynotes,",")
+    echo "Notes : " & join(mynotes,",")
 
-    echo buende
-    echo strich
+    echo frets
+    echo line
 
-    for saite in saiten:
-        echo saite
+    for gstr in guitstr:
+        echo gstr
     
-    echo saiten[0]
+    echo guitstr[0]
 
 
 if paramCount() < 2:
