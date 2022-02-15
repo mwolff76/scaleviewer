@@ -1,4 +1,4 @@
-import tables, strutils
+import os, tables, strutils, sequtils
 
 let
     notes = @["C","C#","D","D#","E","F","F#","G","G#","A","Bb","B"]
@@ -54,9 +54,11 @@ proc main(key : string, mode : string) =
                     "|-D-|-C-|-B-|-A-|-L-|-K-|-J-|-I-|-H-|-G-|-F-|-E-|-D-|-C-|-B-|-A-|-L-|-K-|-J-|-I-|-H-|-G-|-F-|-E-|-D-|-g",
                     "|-K-|-J-|-I-|-H-|-G-|-F-|-E-|-D-|-C-|-B-|-A-|-L-|-K-|-J-|-I-|-H-|-G-|-F-|-E-|-D-|-C-|-B-|-A-|-L-|-K-|-d",
                     "|-F-|-E-|-D-|-C-|-B-|-A-|-L-|-K-|-J-|-I-|-H-|-G-|-F-|-E-|-D-|-C-|-B-|-A-|-L-|-K-|-J-|-I-|-H-|-G-|-F-|-a"]
+                    
+    var unusedNotes = filter(notes, proc(x: string): bool = not(mynotes.contains(x))) 
     
     myReplace(guitstr, mynotes, "O");
-    myReplace(guitstr, notes, "-");
+    myReplace(guitstr, unusedNotes, "-");
 
     echo "Notes : " & join(mynotes,",")
 
